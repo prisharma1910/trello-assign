@@ -74,7 +74,7 @@ export function* updateItem(action) {
 export function* deleteItem(action) {
   const { itemId } = action;
   let state = yield select();
-  let data = state.dashboardData;
+  let data = _.cloneDeep(state.dashboardData);
   let items = data.items;
   delete items[itemId];
   // This deleting Item could have been done in

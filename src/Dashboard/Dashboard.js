@@ -93,12 +93,14 @@ class Dashboard extends React.Component {
             />
           }
         </header>
-        <EditModal />
-        <DragDropContext onDragEnd={this.onDragEnd}>
-          <div className="columns">
-            {listJsx}
-          </div>
-        </DragDropContext>
+        <div className="list-container">
+          <EditModal />
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <div className="columns">
+              {listJsx}
+            </div>
+          </DragDropContext>
+        </div>
       </div>
     )
   }
