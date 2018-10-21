@@ -10,7 +10,6 @@ import {
 } from './Dashboard.actionTypes';
 
 function dashboardData(state, action) {
-  //can handle actions via switch-case for different scenarios
   const { type, data } = action;
   switch (type) {
     case GET_LIST_DATA_SUCCESS:

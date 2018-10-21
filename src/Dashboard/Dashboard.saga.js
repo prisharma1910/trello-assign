@@ -9,6 +9,7 @@ import {
 } from './Dashboard.actionTypes';
 import { getListDataSucess } from './Dashboard.actions';
 import { listData, items, listOrder } from '../initial-data';
+import _ from 'lodash';
 
 let min = 20;
 let max = 100;
@@ -40,7 +41,7 @@ export function* getListData() {
 export function* updateListSequence(action) {
   const { listId, newSequence } = action;
   let state = yield select();
-  let data = Object.assign(state.dashboardData);
+  let data = _.cloneDeep(state.dashboardData);
   data.listData[listId].sequence = newSequence;
   yield put(getListDataSucess(data));
 }
@@ -48,8 +49,8 @@ export function* updateListSequence(action) {
 export function* updateList(action) {
   let { listId, updatedData } = action;
   let state = yield select();
-  let listData = Object.assign(state.dashboardData.listData);
-  let items = Object.assign(state.dashboardData.items);
+  let listData = _.cloneDeep(state.dashboardData.listData);
+  let items = _.cloneDeep(state.dashboardData.items);
   const newItemId = Math.round(Math.random() * (max - min) + min);
   items[newItemId] = { "title": updatedData.title, "desc": updatedData.desc, "comments": [] };
   listData[listId].sequence.push(newItemId);
@@ -61,7 +62,8 @@ export function* updateList(action) {
 export function* updateItem(action) {
   const { itemId, updatedData } = action;
   let state = yield select();
-  let data = Object.assign(state.dashboardData);
+
+  let data = _.cloneDeep(state.dashboardData);  
   let items = data.items;
   items[itemId].title = updatedData.title;
   items[itemId].desc = updatedData.desc;
@@ -84,7 +86,7 @@ export function* deleteItem(action) {
 export function* addNewList(action) {
   const { newData } = action;
   let state = yield select();
-  let data = Object.assign(state.dashboardData);
+  let data = _.cloneDeep(state.dashboardData);
   let listData = data.listData;
   const newListId = Math.round(Math.random() * (listmax - listmin) + listmin);
   listmax = listmax + newListId;

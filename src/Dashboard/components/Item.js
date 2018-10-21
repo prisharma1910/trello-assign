@@ -54,7 +54,6 @@ export default class Item extends React.Component {
               </div>
             </div>
             {provided.placeholder}
-
           </div>
         )}
       </Draggable>

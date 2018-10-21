@@ -33,15 +33,15 @@ export default class List extends React.Component {
     });
     return (
       <div className="column is-one-third">
+       <p className="panel-heading">{listData.title}</p>
         <Droppable droppableId={listId}>
           {(provided) => (
             <div
               ref={provided.innerRef}
               {...provided.droppableProps}
               className="panel">
-              {provided.placeholder}
-              <p className="panel-heading">{listData.title}</p>
-              {itemJsx}
+                {itemJsx}
+                {provided.placeholder}
             </div>)}
         </Droppable>
         {this.state.showAdd ?
