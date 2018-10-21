@@ -6,7 +6,7 @@ import { default as Dashboard } from './Dashboard';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  let store = createStore((state, action) => state, {dashboardData: {}});
+  let store = createStore((state, action) => state, {dashboardData: {}, showModal: false, modalData: {}});
   ReactDOM.render(<Provider store={store}><Dashboard /></Provider>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

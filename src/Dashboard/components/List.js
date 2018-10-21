@@ -1,6 +1,6 @@
 import React from 'react';
 import { default as Item } from './Item';
-import { default as ItemOptions } from './ItemOptions';
+import { default as AddList } from './AddList';
 import { Droppable } from 'react-beautiful-dnd';
 
 export default class List extends React.Component {
@@ -43,7 +43,7 @@ export default class List extends React.Component {
                         </div>)}
                 </Droppable>
                 {this.state.showAdd ?
-                    <ItemOptions
+                    <AddList
                         primaryAction={this.addItem}
                         primaryActionText={"Save"}
                         onCancel={this.toggleAdd}
