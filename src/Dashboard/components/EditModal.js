@@ -22,14 +22,14 @@ class EditModal extends React.Component {
     this.onSave = this.onSave.bind(this);
   }
 
-  componentDidUpdate(prevProps){
-    if(!_.isEqual(prevProps, this.props)){
+  componentDidUpdate(prevProps) {
+    if (!_.isEqual(prevProps, this.props)) {
       this.setState({
         title: this.props.modalData.title || '',
-      desc: this.props.modalData.desc || '',
-      comments: this.props.modalData.comments || [],
-      newComment: '',
-      addComment: false
+        desc: this.props.modalData.desc || '',
+        comments: this.props.modalData.comments || [],
+        newComment: '',
+        addComment: false
       })
     }
   }
@@ -68,8 +68,8 @@ class EditModal extends React.Component {
     });
   }
 
-  onSave(){
-    const { title, desc, comments} = this.state;
+  onSave() {
+    const { title, desc, comments } = this.state;
     this.props.modalData.onSave({
       title,
       desc,
@@ -91,15 +91,17 @@ class EditModal extends React.Component {
             <div className="control">
               <input value={title} onChange={this.updateText} placeholder={'Title'} className="input is-small" />
             </div>
+          </div>
+          <div className="field">
             <div className="control">
               <input value={desc} onChange={this.updateDesc} placeholder={'Description'} className="input is-small" />
             </div>
             {comments.length > 0 && comments.map((i) => { return <p key={i}>{i}</p> })}
-            {addComment ? 
-            <div className="control">
-              <input value={newComment} onChange={this.updateComments} placeholder={'Add Comment'} className="input is-small" />
-              <button onClick={this.saveComment} className="button is-link is-small"> Save</button>
-            </div> :
+            {addComment ?
+              <div className="control">
+                <input value={newComment} onChange={this.updateComments} placeholder={'Add Comment'} className="input is-small" />
+                <button onClick={this.saveComment} className="button is-link is-small"> Save Comment </button>
+              </div> :
               <button onClick={this.addComment} className="button is-link is-small"> Add Comment </button>
             }
           </div>
@@ -115,7 +117,7 @@ class EditModal extends React.Component {
             </div>
           </div>
         </div>
-        <button className="modal-close is-large" aria-label="close" ></button>
+        <button className="modal-close is-large" aria-label="close" onClick={this.props.onCancel} ></button>
       </div>
     )
   }
@@ -123,7 +125,7 @@ class EditModal extends React.Component {
 
 const mapStateToProps = (state) => {
   const { showModal, modalData } = state;
-  return  {showModal, modalData};
+  return { showModal, modalData };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

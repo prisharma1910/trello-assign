@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 import { AddList, EditModal } from './components';
-import { getInitialData, updateListSequence, updateList, updateItem, deleteItem, addNewList, showModal} from './Dashboard.actions';
+import { getInitialData, updateListSequence, updateList, updateItem, deleteItem, addNewList, showModal } from './Dashboard.actions';
 import { default as List } from './components/List';
 import 'bulma/css/bulma.css';
 import './Dashboard.css';
@@ -95,7 +95,7 @@ class Dashboard extends React.Component {
         </header>
         <EditModal />
         {!modalVisible && <DragDropContext onDragEnd={this.onDragEnd}>
-          <div className="columns list-container">
+          <div className="columns">
             {listJsx}
           </div>
         </DragDropContext>}
@@ -111,7 +111,7 @@ const mapStateToProps = (state, ownProps) => {
     items: dashboardData.items,
     listOrder: dashboardData.listOrder.listOrder,
     modalVisible: showModal
-  } : {modalVisible: false};
+  } : { modalVisible: false };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

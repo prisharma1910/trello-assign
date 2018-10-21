@@ -28,10 +28,12 @@ export default class AddList extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="field is-grouped">
+        <div className="field">
           <div className="control">
-            <input value={this.state.title} onChange={this.updateText} placeholder={'Title'} className="input is-small"/>
+            <input value={this.state.title} onChange={this.updateText} placeholder={'Title'} className="input is-small" />
           </div>
+        </div>
+        <div className="field">
           <div className="control">
             {isItem && <React.Fragment> <input value={this.state.desc} onChange={this.updateDesc} placeholder={'Description'} className="input is-small" /> <br /> </React.Fragment>}
           </div>

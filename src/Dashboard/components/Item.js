@@ -4,16 +4,13 @@ import { Draggable } from 'react-beautiful-dnd';
 export default class Item extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showEdit: false
-    }
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.onDeleteItem = this.onDeleteItem.bind(this);
   }
 
   toggleEdit() {
-    const { itemData} = this.props;
+    const { itemData } = this.props;
     this.props.showModal({
       title: itemData.title,
       desc: itemData.desc,
@@ -50,14 +47,16 @@ export default class Item extends React.Component {
             <div className="item-container">
               <p> <strong> {itemData.title} </strong> </p>
               <span><strong>Desc</strong>: </span>{itemData.desc}
-              <br/>
+              <br />
               <span><strong>Comments</strong>: </span>{itemData.comments.length}
-              {provided.placeholder}
-              <div className={this.state.showEdit? "" : "is-pulled-right"}>
-                <button onClick={this.toggleEdit} className="button is-light">Edit</button>  
-                </div>
+              <div className="is-pulled-right">
+                <button onClick={this.toggleEdit} className="button is-light">Edit</button>
+              </div>
             </div>
-          </div>)}
+            {provided.placeholder}
+
+          </div>
+        )}
       </Draggable>
     )
   }
