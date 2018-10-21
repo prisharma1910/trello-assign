@@ -88,23 +88,28 @@ class EditModal extends React.Component {
         <div className="modal-background"></div>
         <div className="modal-content">
           <div className="field">
+          <label className="label has-text-white"> Title: </label>
             <div className="control">
               <input value={title} onChange={this.updateText} placeholder={'Title'} className="input is-small" />
             </div>
           </div>
           <div className="field">
+          <label className="label has-text-white"> Description: </label>
             <div className="control">
               <input value={desc} onChange={this.updateDesc} placeholder={'Description'} className="input is-small" />
             </div>
-            {comments.length > 0 && comments.map((i) => { return <p key={i}>{i}</p> })}
+            </div>
+            <div className="field">
+            {comments.length > 0 && <label className="label has-text-white"> Comments: </label>}
+            {comments.length > 0 && comments.map((i) => { return <p className="has-text-white" key={i}>{i}</p> })}
             {addComment ?
               <div className="control">
                 <input value={newComment} onChange={this.updateComments} placeholder={'Add Comment'} className="input is-small" />
-                <button onClick={this.saveComment} className="button is-link is-small"> Save Comment </button>
+                <button onClick={this.saveComment} className="button is-link is-small is-pulled-right"> Save Comment </button>
               </div> :
-              <button onClick={this.addComment} className="button is-link is-small"> Add Comment </button>
+              <button onClick={this.addComment} className="button is-link is-small is-pulled-right"> Add Comment </button>
             }
-          </div>
+            </div>
           <div className="field is-grouped">
             <div className="control">
               <button onClick={this.onSave} className="button is-link is-small"> Save </button>

@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { list, listOrder, updateItemData, deleteItem, addItemOnList, showModal, modalVisible } = this.props;
+    const { list, listOrder, updateItemData, deleteItem, addItemOnList, showModal } = this.props;
     const listJsx = [];
     if (listOrder) {
       listOrder.forEach((listId, id) => {
@@ -105,13 +105,12 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const { dashboardData, showModal } = state;
+  const { dashboardData } = state;
   return dashboardData.listData ? {
     list: dashboardData.listData,
     items: dashboardData.items,
     listOrder: dashboardData.listOrder.listOrder,
-    modalVisible: showModal
-  } : { modalVisible: false };
+  } : {};
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
