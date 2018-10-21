@@ -4,12 +4,14 @@ Pre-requisites:
 * node 8+ version
 * npm 5+ version
 
-Installation: [npm run install]
+**Commands**
 
-Start: [npm run start]
+* Installation: npm run install
 
-Unit test execution: [npm run test]
+* Start: npm run start
 
-Build project: [npm run build]
+* Unit test execution: [npm run test]
+
+* Build project: [npm run build]
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
