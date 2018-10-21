@@ -88,18 +88,18 @@ class EditModal extends React.Component {
         <div className="modal-background"></div>
         <div className="modal-content">
           <div className="field">
-          <label className="label has-text-white"> Title: </label>
+            <label className="label has-text-white"> Title: </label>
             <div className="control">
               <input value={title} onChange={this.updateText} placeholder={'Title'} className="input is-small" />
             </div>
           </div>
           <div className="field">
-          <label className="label has-text-white"> Description: </label>
+            <label className="label has-text-white"> Description: </label>
             <div className="control">
               <input value={desc} onChange={this.updateDesc} placeholder={'Description'} className="input is-small" />
             </div>
-            </div>
-            <div className="field">
+          </div>
+          <div className="field">
             {comments.length > 0 && <label className="label has-text-white"> Comments: </label>}
             {comments.length > 0 && comments.map((i) => { return <p className="has-text-white" key={i}>{i}</p> })}
             {addComment ?
@@ -109,7 +109,7 @@ class EditModal extends React.Component {
               </div> :
               <button onClick={this.addComment} className="button is-link is-small is-pulled-right"> Add Comment </button>
             }
-            </div>
+          </div>
           <div className="field is-grouped">
             <div className="control">
               <button onClick={this.onSave} className="button is-link is-small"> Save </button>
