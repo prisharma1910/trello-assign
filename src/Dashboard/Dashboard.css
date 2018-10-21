@@ -1,0 +1,18 @@
+
+  .main-content{
+    width: 95vw !important;
+    margin: 1rem auto !important;
+  }
+
+  .margin-bottom-5{
+    margin-bottom: 5px;
+  }
+  
+  .item-container{
+    width: 100%;
+  }
+
+  .list-container{
+    width: 100%;
+    overflow-x: scroll;
+  }
