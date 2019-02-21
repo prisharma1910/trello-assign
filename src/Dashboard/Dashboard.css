@@ -1,4 +1,8 @@
 
+  body{
+    overflow-x: scroll;
+    height: 100vh;
+  }
   .main-content{
     width: 95vw !important;
     margin: 1rem auto !important;
@@ -14,5 +18,4 @@
 
   .list-container{
     width: 100%;
-    overflow-x: scroll;
   }
