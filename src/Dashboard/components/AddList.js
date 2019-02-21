@@ -40,13 +40,13 @@ export default class AddList extends React.Component {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button onClick={() => this.props.primaryAction(this.state)} className="button is-small is-link"> {this.props.primaryActionText} </button>
+            <button onClick={() => this.props.primaryAction(this.state)} className="button is-small is-primary"> {this.props.primaryActionText} </button>
           </div>
           <div className="control">
             {this.props.secondaryAction ? <button onClick={this.props.secondaryAction} className="button is-small is-danger is-outlined"> {this.props.secondaryActionText} </button> : null}
           </div>
           <div className="control">
-            <button onClick={this.props.onCancel} className="button is-text is-small"> Cancel </button>
+            <button onClick={this.props.onCancel} className="button is-link is-small"> Cancel </button>
           </div>
         </div>
       </React.Fragment>

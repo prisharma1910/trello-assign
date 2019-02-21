@@ -84,7 +84,7 @@ class Dashboard extends React.Component {
       <div className="main-content">
         <header className="margin-bottom-5">
           <button onClick={this.toggleAdd} className="button is-primary is-pulled-right">Add List</button>
-          <h1 className="title">Welcome to List Manager </h1>
+          <h1 className="title">Sample Trello Board</h1>
           {this.state.addList &&
             <AddList
               primaryAction={this.saveNewList}

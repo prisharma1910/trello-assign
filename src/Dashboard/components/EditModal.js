@@ -112,13 +112,13 @@ class EditModal extends React.Component {
           </div>
           <div className="field is-grouped">
             <div className="control">
-              <button onClick={this.onSave} className="button is-link is-small"> Save </button>
+              <button onClick={this.onSave} className="button is-small is-primary"> Save </button>
             </div>
             <div className="control">
-              <button onClick={onDelete} className="button is-small is-danger is-outlined"> Delete </button>
+              <button onClick={onDelete} className="button is-small is-link is-danger"> Delete </button>
             </div>
             <div className="control">
-              <button onClick={this.props.onCancel} className="button is-text is-small"> Cancel </button>
+              <button onClick={this.props.onCancel} className="button is-link is-small"> Cancel </button>
             </div>
           </div>
         </div>

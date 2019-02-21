@@ -48,7 +48,7 @@ export default class Item extends React.Component {
               <p> <strong> {itemData.title} </strong> </p>
               <span><strong>Desc</strong>: </span>{itemData.desc}
               <br />
-              <span><strong>Comments</strong>: </span>{itemData.comments.length}
+              <span><strong>No. of Comments</strong>: </span>{itemData.comments.length}
               <div className="is-pulled-right">
                 <button onClick={this.toggleEdit} className="button is-light">Edit</button>
               </div>
