@@ -5,9 +5,9 @@ export const listData = {
 }
 
 export const items = {
-    "item1": { "title": "call with Jacob", "desc": "you can drag & drop me", "comments": ["can add more than 1 comments", "discuss"] },
-    "item2": { "title": "prepare ppt", "desc": "drag & drop on other list", "comments": ["try it"] },
-    "item3": { "title": "code table", "desc": "I'm in progress", "comments": ["can add more than 1 comments"] }
+    "item1": { "title": "Call with Jacob", "desc": "You can drag & drop me", "comments": ["Can add more than 1 comments", "discuss"] },
+    "item2": { "title": "Prepare ppt", "desc": "Drag & drop on other list", "comments": ["Try it"] },
+    "item3": { "title": "Code table", "desc": "I'm in progress", "comments": ["Can add more than 1 comments"] }
 
 }
 

@@ -2,7 +2,6 @@
   body{
     overflow-x: scroll;
     height: 100vh;
-    background-color: lavender;
   }
   .main-content{
     width: 95vw !important;
@@ -23,11 +22,16 @@
 
   .panel-heading{
     padding: 0.1em 0.1em;
+    background-color: navy;
+    color: white;
+    font-weight: 400;
   }
 
   .panel-block{
     margin-top: 5px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border-style: outset;
+    border-color: lightgrey;
   }
 
   .panel:not(:last-child) {
